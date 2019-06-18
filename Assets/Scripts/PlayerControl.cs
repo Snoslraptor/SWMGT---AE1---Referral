@@ -13,6 +13,7 @@ public class PlayerControl : MonoBehaviour
     private bool Jumping;
     private bool falling;
     public float jumpHeight;
+    public float jumpSpeed;
     private float airtime;
     //ground detection
     public Collider2D collider2D;
@@ -94,7 +95,7 @@ public class PlayerControl : MonoBehaviour
             my_rigid.velocity = new Vector2(0, my_rigid.velocity.y);
 
         if (Jumping)
-            my_rigid.velocity = new Vector2(my_rigid.velocity.x, speed * Time.deltaTime);
+            my_rigid.velocity = new Vector2(my_rigid.velocity.x, jumpSpeed * Time.deltaTime);
     }
 
 
